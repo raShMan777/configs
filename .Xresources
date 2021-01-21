@@ -1,0 +1,22 @@
+Rxvt.foreground: grey
+Rxvt.saveLines: 10000
+!XTerm*geometry: 200x56
+XTerm*geometry: 140x40
+XTerm*MetaSendsEscape: true
+XTerm*VT100.utf8Fonts.font: -misc-fixed-medium-r-normal--11-120-75-75-c-80-iso10646-1
+XTerm*faceName: Source Code Pro
+XTerm*faceSize: 11
+XTerm*renderFont: true
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
