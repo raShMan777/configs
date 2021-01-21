@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<darktable_style version="1.0">
+<info>
+<name>Objektivkorrektur</name>
+<description></description>
+</info>
+<style>
+<plugin>
+<num>2</num>
+<module>5</module>
+<operation>lens</operation>
+<op_params>gz05eJyzZoCABb3N9rJRR+wZGCY4ArEDA0OVCyNQ3NPH2VXXzNjAgGFggKtCQJSCoYWuoYFpbq5Cmr6JgruCf3AwnV3RYA/BDAwA6uEPMA==</op_params>
+<enabled>1</enabled>
+<blendop_params>gz11eJxjYGBgkGAAgRNODGiAEV0AJ2iwh+CRxQcA5qIZBA==</blendop_params>
+<blendop_version>8</blendop_version>
+<multi_priority>0</multi_priority>
+<multi_name></multi_name>
+</plugin></style>
+</darktable_style>
