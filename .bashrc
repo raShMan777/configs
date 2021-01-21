@@ -15,21 +15,14 @@ export HISTCONTROL=ignorespace
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Custom prompt
-#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-# Powerline
-#if [ -f `which powerline-daemon` ]; then
-#    if [ "$TERM" != "linux" ]; then
-#       powerline-daemon -q
-#       POWERLINE_BASH_CONTINUATION=1
-#       POWERLINE_BASH_SELECT=1
-##      POWERLINE_COMMAND=/usr/local/bin/powerline-hs
-##      POWERLINE_CONFIG_COMMAND=/bin/true
-##      . /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
-#       . /usr/share/powerline/bindings/bash/powerline.sh
-#    fi
-#fi
+export NNN_BMS='D:~/docs;d:~/downloads/;k:/home/sra/bilder/kamera;n:/home/sra/Nextcloud;v:/home/sra/downloads/video;f:/home/sra/filme'
+export NNN_SSHFS="sshfs -o follow_symlinks"        # make sshfs follow symlinks on the remote
+export NNN_COLORS="2136"                           # use a different color for each context
+#export NNN_OPENER=/home/sra/.config/nnn/plugins/nuke
+export NNN_PLUG='d:dups;c:chksum;D:diffs;r:dragdrop;f:fzcd;h:fzhist;o:fzopen;p:getplugs;i:imgview;m:mediainf;M:mocplay;3:mp3conv;P:pskill;s:suedit;q:_|geeqie $nnn;S:_|sublime_text $nnn;l:-_less -iR $nnn*;v:vidthumb'
+export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
+export VISUAL='subl'
+export LC_COLLATE="C"
 
 if [ -f $(which powerline-go) ]; then
     function _update_ps1() {
@@ -40,8 +33,6 @@ if [ -f $(which powerline-go) ]; then
         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
     fi
 fi
-
-#export PATH=$PATH:/home/sra/bin
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -105,11 +96,27 @@ alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias na='nano'
 alias web='links -download-dir ~/ www.google.com'
 alias wget='wget --progress=bar'
+alias yayfzf="yay -Slq | fzf -m --preview 'yay -Si {1}'| xargs -ro yay -S"
 
 export G_BROKEN_FILENAMES="1"
 export EDITOR="mcedit"
+export EDITOR="less"
 
 . /etc/profile
+
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+# Use fd (https://github.com/sharkdp/fd) instead of the default find command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
 
 function fplay {
     MUSICROOT=~/musik/
@@ -143,5 +150,7 @@ function mma() {
 function mmv() {
     mpv ytdl://ytsearch10:"$@"
 }
+
+source /home/sra/.config/broot/launcher/bash/br
 
 cd

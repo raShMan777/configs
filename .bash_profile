@@ -7,3 +7,5 @@ fi
 
 # OPAM configuration
 . /home/sra/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+source /home/sra/.config/broot/launcher/bash/br
