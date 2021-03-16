@@ -1,0 +1,67 @@
+{
+    "downloader_precedence":
+    {
+        "windows":
+        [
+            "urllib",
+            "curl",
+            "wget",
+            "wininet"
+        ]
+    },
+    "http_cache": true,
+    "cache_length": 3600,
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "1337 Color Scheme",
+        "A File Icon",
+        "Advanced CSV",
+        "Alignment",
+        "AlignTab",
+        "All Autocomplete",
+        "AutoFileName",
+        "AutoHotkey",
+        "BracketHighlighter",
+        "Chromeless",
+        "CodeFormatter",
+        "Console Wrap",
+        "DiffView",
+        "Dockerfile Syntax Highlighting",
+        "EasyMotion",
+        "Expand Selection to Quotes",
+        "ExportHtml",
+        "FileDiffs",
+        "FilterPipes",
+        "Generic Config",
+        "Git",
+        "Git blame",
+        "GitGutter",
+        "Gitignore",
+        "HTMLBeautify",
+        "MarkdownEditing",
+        "MarkdownPreview",
+        "ModernPerl",
+        "Package Control",
+        "Perl Completions",
+        "PerlSubs",
+        "PerlTidy",
+        "PowerShell",
+        "Pretty JSON",
+        "Pretty Shell",
+        "Pretty YAML",
+        "Print to HTML",
+        "Python 3",
+        "SideBarEnhancements",
+        "StringEncode",
+        "SublimeLinter",
+        "SublimeLinter-contrib-perl",
+        "SublimeLinter-pylint",
+        "SyncedSideBar",
+        "TrailingSpaces",
+        "Trimmer"
+    ]
+}

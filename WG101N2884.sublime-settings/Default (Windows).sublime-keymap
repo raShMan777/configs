@@ -1,0 +1,10 @@
+[
+	{ "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+    { "keys": ["alt+z"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+	{ "keys": ["ctrl+shift+`"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+	{ "keys": ["ctrl+alt+a"], "command": "insert_snippet", "args": {"contents": "ä"} },
+	{ "keys": ["ctrl+alt+s"], "command": "insert_snippet", "args": {"contents": "ß"} },
+]
