@@ -1,16 +1,15 @@
 {
+	"caret_extra_width": 1,
+	"caret_style": "solid",
+	"color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
+	"draw_centered": false,
 	"extensions":
 	[
 		"mdown",
-		"txt",
 		"md"
 	],
-    "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
-    "draw_centered": false,
-    "wrap_width": 165,
-    "line_numbers": true,
-    "line_padding_top": 1,
-    "line_padding_bottom": 1,
-    "caret_style": "solid",
-    "caret_extra_width": 1,
+	"line_numbers": true,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"wrap_width": 165
 }
