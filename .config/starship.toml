@@ -9,9 +9,9 @@
 # Replace the "❯" symbol in the prompt with "➜"
 # symbol = "➜"     # The "symbol" segment is being set to "➜"
 error_symbol = "✗"
-use_symbol_for_status = true
-style_success = "bold #00A652"
-style_failure = "bold #df382c"
+# use_symbol_for_status = true
+# style_success = "bold #00A652"
+# style_failure = "bold #df382c"
 
 [username]
 style_user = "white bold"
@@ -44,8 +44,8 @@ disabled = false
 
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
-show_percentage = true
-show_swap = true
+# show_percentage = true
+# show_swap = true
 threshold = -1
 style = "bold dimmed white"
 disabled = false
@@ -64,7 +64,7 @@ commit_hash_length = 8
 style = "bold white"
 
 [git_state]
-progress_divider = " of "
+# progress_divider = " of "
 
 [git_status]
 conflicted = "⚔️ "
