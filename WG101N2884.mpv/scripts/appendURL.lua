@@ -1,4 +1,14 @@
--- appendurl - Tsubajashi
+-- Author: donmaiq
+-- Appends url from clipboard to the playlist
+-- Requires xclip(linux), powershell(windows), pbpaste(macOS)
+
+-- detect_platform() and get_clipboard() copied and edited from:
+    -- https://github.com/rossy/mpv-repl
+    -- © 2016, James Ross-Gowan
+    --
+    -- Permission to use, copy, modify, and/or distribute this software for any
+    -- purpose with or without fee is hereby granted, provided that the above
+    -- copyright notice and this permission notice appear in all copies.
 
 local platform = nil --set to 'linux', 'windows' or 'macos' to override automatic assign
 
@@ -48,7 +58,7 @@ end
 function get_clipboard(primary) 
   if platform == 'linux' then
     local args = { 'xclip', '-selection', primary and 'primary' or 'clipboard', '-out' }
-    return handleres(utils.subprocess({ args = args }), args, primary)
+    return handleres(utils.subprocess({ args = args, cancellable = false }), args, primary)
   elseif platform == 'windows' then
     local args = {
       'powershell', '-NoProfile', '-Command', [[& {
@@ -70,12 +80,12 @@ function get_clipboard(primary)
         [Console]::OpenStandardOutput().Write($u8clip, 0, $u8clip.Length)
       }]]
     }
-    return handleres(utils.subprocess({ args =  args }), args)
+    return handleres(utils.subprocess({ args =  args, cancellable = false }), args)
   elseif platform == 'macos' then
     local args = { 'pbpaste' }
-    return handleres(utils.subprocess({ args = args }), args)
+    return handleres(utils.subprocess({ args = args, cancellable = false }), args)
   end
   return nil
 end
 
-mp.add_key_binding("ctrl+v", "appendURL", append)
+mp.add_key_binding("a", "appendURL", append)
